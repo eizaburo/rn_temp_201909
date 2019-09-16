@@ -12,3 +12,7 @@ npm install --save react-native-vector-icons
 npm install --save redux react-redux
 npm install --save redux-thunk
 ```
+
+## Tag
+
+* 1-1 : モジュールとHome.jsを設定したところ
