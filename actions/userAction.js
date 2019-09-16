@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 //変数
 export const UPDATE_NAME = 'UPDATE_NAME';
 export const GET_VALUE_FROM_SERVER = 'GET_VALUE_FROM_SERVER';
@@ -12,8 +14,10 @@ export const updateName = name => (
 
 export const getValueFromServer = () => async (dispatch, getState) => {
 
-    const response = await fetch('http://www.bluecode.jp/test/api.php');
-    const json = await response.json();
+    // const response = await fetch('http://www.bluecode.jp/test/api.php');
+    // const json = await response.json();
+    const response = await axios.get('http://www.bluecode.jp/test/api.php');
+    const json = await response.data;
 
     dispatch(
         {
