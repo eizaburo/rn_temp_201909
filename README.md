@@ -15,4 +15,5 @@ npm install --save redux-thunk
 
 ## Tag
 
-* 1-1 : モジュールとHome.jsを設定したところ
+* v1-1 : モジュールとHome.jsを設定したところ。
+* v1-2 : Profile.jsを追加し、StackNavigtorを設定。
