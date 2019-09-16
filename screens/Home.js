@@ -4,6 +4,7 @@ import { Card, Input } from 'react-native-elements';
 
 //redux
 import { connect } from 'react-redux';
+import { updateName } from '../actions/userAction';
 
 class Home extends React.Component {
     render() {
@@ -15,6 +16,10 @@ class Home extends React.Component {
                     onPress={() => this.props.navigation.navigate('Profile')}
                 />
                 <Text>{this.props.state.userData.user.name}</Text>
+                <Button
+                    title="update name@Home"
+                    onPress={()=>this.props.updateName('foo@Home')}
+                />
             </View>
         );
     }
@@ -26,4 +31,10 @@ const mapStateToProps = state => (
     }
 );
 
-export default connect(mapStateToProps, null)(Home);
+const mapDispatchtoProps = dispatch => (
+    {
+        updateName: (name) => dispatch(updateName(name)),
+    }
+);
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Home);
