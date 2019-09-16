@@ -4,7 +4,7 @@ import { Card, Input } from 'react-native-elements';
 
 //redux
 import { connect } from 'react-redux';
-import { updateName } from '../actions/userAction';
+import { updateName, getValueFromServer } from '../actions/userAction';
 
 class Home extends React.Component {
     render() {
@@ -18,7 +18,11 @@ class Home extends React.Component {
                 <Text>{this.props.state.userData.user.name}</Text>
                 <Button
                     title="update name@Home"
-                    onPress={()=>this.props.updateName('foo@Home')}
+                    onPress={() => this.props.updateName('foo@Home')}
+                />
+                <Button
+                    title="update name@Server"
+                    onPress={() => this.props.getValueFromServer()}
                 />
             </View>
         );
@@ -34,6 +38,7 @@ const mapStateToProps = state => (
 const mapDispatchtoProps = dispatch => (
     {
         updateName: (name) => dispatch(updateName(name)),
+        getValueFromServer: () => dispatch(getValueFromServer()),
     }
 );
 

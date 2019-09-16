@@ -1,4 +1,4 @@
-import { UPDATE_NAME } from '../actions/userAction';
+import { UPDATE_NAME, GET_VALUE_FROM_SERVER } from '../actions/userAction';
 
 const initialState = {
     user: {
@@ -13,6 +13,12 @@ const userReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 user: {
                     name: action.name,
+                }
+            });
+        case GET_VALUE_FROM_SERVER:
+            return Object.assign({}, state, {
+                user: {
+                    name: action.name
                 }
             });
         default:

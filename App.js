@@ -9,6 +9,9 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 //redux
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+//thunk
+import thunk from 'redux-thunk';
+
 
 import Home from './screens/Home';
 import Profile from './screens/Profile';
@@ -29,7 +32,7 @@ const AppContainer = createAppContainer(Stack);
 const store = createStore(combineReducers({
     userData: userReducer,
 }), applyMiddleware(
-
+    thunk,
 ));
 
 export default class App extends React.Component {
