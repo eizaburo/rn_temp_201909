@@ -31,3 +31,11 @@ cd rn_temp_201909
 npm install
 expo start
 ```
+
+cloneしたときno branchなので、
+
+```
+git checkout master
+```
+
+しとく。
